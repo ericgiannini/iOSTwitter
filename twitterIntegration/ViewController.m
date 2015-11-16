@@ -31,6 +31,10 @@
 }
 
 - (IBAction)showShareAction:(id)sender {
+    
+    if ([self.tweetTextView isFirstResponder]) {
+        [[self tweetTextView] resignFirstResponder];
+    }
 }
 
 - (void)configureTweetTextView {
