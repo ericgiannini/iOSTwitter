@@ -87,7 +87,9 @@
         
         if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
             
-            [self showAlertMessage:@"Facebook is available"];
+            SLComposeViewController *facebookVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+            [facebookVC setInitialText:self.tweetTextView.text];
+            [self presentViewController:facebookVC animated:YES completion:nil];
             
         } else {
         
@@ -96,11 +98,19 @@
         
     
     }];
+    
+    UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"More" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        UIActivityViewController *moreVC = [[UIActivityViewController alloc] initWithActivityItems:@[self.tweetTextView.text] applicationActivities:nil];
+        [self presentViewController:moreVC animated:YES completion:nil];
+        
+    }];
 
     
     [actionController addAction:cancel];
     [actionController addAction:tweetAction];
     [actionController addAction:facebookAction];
+    [actionController addAction:moreAction];
     
     [self presentViewController:actionController animated:YES completion:nil];
     
