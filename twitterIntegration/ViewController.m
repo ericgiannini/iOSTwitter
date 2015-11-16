@@ -40,7 +40,22 @@
     
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
     
-    UIAlertAction *tweetAction = [UIAlertAction actionWithTitle:@"Tweet" style:UIAlertActionStyleDefault handler:nil];
+    UIAlertAction *tweetAction = [UIAlertAction actionWithTitle:@"Tweet" style:UIAlertActionStyleDefault handler:
+                                  ^(UIAlertAction *action){
+                                      
+                                      if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+                                          // Tweet
+                                          
+                                        
+                                          
+                                      } else {
+                                          
+                                          
+                                          
+                                      }
+                                
+                                  
+                                  }];
     
     [actionController addAction:cancel];
     [actionController addAction:tweetAction];
