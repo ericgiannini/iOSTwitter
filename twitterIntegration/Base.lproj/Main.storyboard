@@ -22,6 +22,9 @@
                                 <items>
                                     <barButtonItem systemItem="action" id="OQz-Zf-5wm">
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="showShareAction:" destination="BYZ-38-t0r" id="34V-4A-s5c"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
@@ -43,6 +46,9 @@
                             <constraint firstItem="3rk-kd-4Sv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="vdh-y2-VOQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tweetTextView" destination="U6l-Ft-tXF" id="7fT-9u-AaG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
