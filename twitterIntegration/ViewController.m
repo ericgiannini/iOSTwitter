@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *tweetTextView;
 
 - (void)configureTweetTextView ;
+- (void)signedOutOfTwitter:(NSString *)warningMessage ;
 
 @end
 
@@ -29,6 +30,19 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (void)signedOutOfTwitter:(NSString *)warningMessage {
+    
+    UIAlertController *alertController;
+    alertController = [UIAlertController alertControllerWithTitle:@"TwitterShare" message:warningMessage preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+}
+
 
 - (IBAction)showShareAction:(id)sender {
     
@@ -50,7 +64,7 @@
                                           
                                       } else {
                                           
-                                          
+                                          [self signedOutOfTwitter:@"Please sign into Twitter before tweeting. Go to Settings > Twitter > User Name:"];
                                           
                                       }
                                 
