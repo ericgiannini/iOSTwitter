@@ -50,7 +50,7 @@
         [[self tweetTextView] resignFirstResponder];
     }
 
-    UIAlertController *actionController = [UIAlertController alertControllerWithTitle:@"Test Title" message:@"Your Tweet" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *actionController = [UIAlertController alertControllerWithTitle:@"" message:@"Your Tweet" preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
     
@@ -58,8 +58,16 @@
                                   ^(UIAlertAction *action){
                                       
                                       if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
-                                          // Tweet
                                           
+                                          SLComposeViewController *tweetVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+                                          
+                                          if ([self.tweetTextView.text length] < 140) {
+                                              
+                                              [tweetVC setInitialText:self.tweetTextView.text];
+                                          } else {
+                                              NSString *shortText = [self.tweetTextView.text substringFromIndex:140];
+                                              [tweetVC setInitialText:shortText];
+                                          }
                                         
                                           
                                       } else {
