@@ -40,7 +40,10 @@
     
     UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
     
+    UIAlertAction *tweetAction = [UIAlertAction actionWithTitle:@"Tweet" style:UIAlertActionStyleDefault handler:nil];
+    
     [actionController addAction:cancel];
+    [actionController addAction:tweetAction];
     
     [self presentViewController:actionController animated:YES completion:nil];
     
