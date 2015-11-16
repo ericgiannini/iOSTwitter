@@ -68,6 +68,8 @@
                                               NSString *shortText = [self.tweetTextView.text substringFromIndex:140];
                                               [tweetVC setInitialText:shortText];
                                           }
+                                          
+                                          [self presentViewController:tweetVC animated:YES completion:nil];
                                         
                                           
                                       } else {
