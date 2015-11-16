@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *tweetTextView;
 
 - (void)configureTweetTextView ;
-- (void)signedOutOfTwitter:(NSString *)warningMessage ;
+- (void)showAlertMessage:(NSString *)warningMessage ;
 
 @end
 
@@ -32,10 +32,10 @@
 }
 
 
-- (void)signedOutOfTwitter:(NSString *)warningMessage {
+- (void)showAlertMessage:(NSString *)warningMessage {
     
     UIAlertController *alertController;
-    alertController = [UIAlertController alertControllerWithTitle:@"TwitterShare" message:warningMessage preferredStyle:UIAlertControllerStyleAlert];
+    alertController = [UIAlertController alertControllerWithTitle:@"Warning!" message:warningMessage preferredStyle:UIAlertControllerStyleAlert];
     
     [alertController addAction:[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil]];
     
@@ -64,6 +64,7 @@
                                           if ([self.tweetTextView.text length] < 140) {
                                               
                                               [tweetVC setInitialText:self.tweetTextView.text];
+                                              
                                           } else {
                                               NSString *shortText = [self.tweetTextView.text substringFromIndex:140];
                                               [tweetVC setInitialText:shortText];
@@ -74,15 +75,32 @@
                                           
                                       } else {
                                           
-                                          [self signedOutOfTwitter:@"Please sign into Twitter before tweeting. Go to Settings > Twitter > User Name:"];
+                                          [self showAlertMessage:@"Please sign into Twitter before tweeting. Go to Settings > Twitter > User Name:"];
                                           
                                       }
                                 
                                   
                                   }];
     
+    UIAlertAction *facebookAction = [UIAlertAction actionWithTitle:@"Post to Facebook" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+
+        
+        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+            
+            [self showAlertMessage:@"Facebook is available"];
+            
+        } else {
+        
+            [self showAlertMessage:@"Please sign in to Facebook."];
+        }
+        
+    
+    }];
+
+    
     [actionController addAction:cancel];
     [actionController addAction:tweetAction];
+    [actionController addAction:facebookAction];
     
     [self presentViewController:actionController animated:YES completion:nil];
     
