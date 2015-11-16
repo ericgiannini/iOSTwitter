@@ -13,6 +13,7 @@
 		9950543C1BF960FB00C47A5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9950543A1BF960FB00C47A5E /* Main.storyboard */; };
 		9950543E1BF960FB00C47A5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9950543D1BF960FB00C47A5E /* Assets.xcassets */; };
 		995054411BF960FB00C47A5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9950543F1BF960FB00C47A5E /* LaunchScreen.storyboard */; };
+		995054491BF98BC300C47A5E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 995054481BF98BC300C47A5E /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9950543D1BF960FB00C47A5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		995054401BF960FB00C47A5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		995054421BF960FB00C47A5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		995054481BF98BC300C47A5E /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				995054491BF98BC300C47A5E /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +45,7 @@
 		995054251BF960FB00C47A5E = {
 			isa = PBXGroup;
 			children = (
+				995054481BF98BC300C47A5E /* Social.framework */,
 				995054301BF960FB00C47A5E /* twitterIntegration */,
 				9950542F1BF960FB00C47A5E /* Products */,
 			);
@@ -300,6 +304,7 @@
 				995054471BF960FB00C47A5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
