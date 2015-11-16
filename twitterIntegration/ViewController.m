@@ -35,6 +35,11 @@
     if ([self.tweetTextView isFirstResponder]) {
         [[self tweetTextView] resignFirstResponder];
     }
+
+    UIAlertController *actionController = [UIAlertController alertControllerWithTitle:@"Test Title" message:@"Your Tweet" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [self presentViewController:actionController animated:YES completion:nil];
+    
 }
 
 - (void)configureTweetTextView {
