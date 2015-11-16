@@ -38,6 +38,10 @@
 
     UIAlertController *actionController = [UIAlertController alertControllerWithTitle:@"Test Title" message:@"Your Tweet" preferredStyle:UIAlertControllerStyleAlert];
     
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
+    
+    [actionController addAction:cancel];
+    
     [self presentViewController:actionController animated:YES completion:nil];
     
 }
