@@ -12,8 +12,14 @@
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *tweetTextView;
+@property (weak, nonatomic) IBOutlet UITextView *facebookTextView;
+@property (weak, nonatomic) IBOutlet UITextView *moreTextView;
+
+
 
 - (void)configureTweetTextView ;
+- (void)configureFacebookTextView ;
+- (void)configureMoreTextView ;
 - (void)showAlertMessage:(NSString *)warningMessage ;
 
 @end
@@ -24,6 +30,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self configureTweetTextView];
+    [self configureFacebookTextView];
+    [self configureMoreTextView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,76 +52,67 @@
 }
 
 
+- (IBAction)alertButton:(id)sender {
+    
+    UIAlertController *actionController = [UIAlertController alertControllerWithTitle:@"" message:@"Your Tweet" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
+    
+    [actionController addAction:cancel];
+    [self presentViewController:actionController animated:YES completion:nil];
+    
+}
+
+
 - (IBAction)showShareAction:(id)sender {
     
     if ([self.tweetTextView isFirstResponder]) {
         [[self tweetTextView] resignFirstResponder];
     }
-
-    UIAlertController *actionController = [UIAlertController alertControllerWithTitle:@"" message:@"Your Tweet" preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
-    
-    UIAlertAction *tweetAction = [UIAlertAction actionWithTitle:@"Tweet" style:UIAlertActionStyleDefault handler:
-                                  ^(UIAlertAction *action){
-                                      
-                                      if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
-                                          
-                                          SLComposeViewController *tweetVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-                                          
-                                          if ([self.tweetTextView.text length] < 140) {
-                                              
-                                              [tweetVC setInitialText:self.tweetTextView.text];
-                                              
-                                          } else {
-                                              NSString *shortText = [self.tweetTextView.text substringFromIndex:140];
-                                              [tweetVC setInitialText:shortText];
-                                          }
-                                          
-                                          [self presentViewController:tweetVC animated:YES completion:nil];
-                                        
-                                          
-                                      } else {
-                                          
-                                          [self showAlertMessage:@"Please sign into Twitter before tweeting. Go to Settings > Twitter > User Name:"];
-                                          
-                                      }
-                                
-                                  
-                                  }];
-    
-    UIAlertAction *facebookAction = [UIAlertAction actionWithTitle:@"Post to Facebook" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
         
-        if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        SLComposeViewController *tweetVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        if ([self.tweetTextView.text length] < 140) {
             
-            SLComposeViewController *facebookVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-            [facebookVC setInitialText:self.tweetTextView.text];
-            [self presentViewController:facebookVC animated:YES completion:nil];
+            [tweetVC setInitialText:self.tweetTextView.text];
             
         } else {
-        
-            [self showAlertMessage:@"Please sign in to Facebook."];
+            NSString *shortText = [self.tweetTextView.text substringFromIndex:140];
+            [tweetVC setInitialText:shortText];
         }
         
-    
-    }];
-    
-    UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"More" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self presentViewController:tweetVC animated:YES completion:nil];
         
-        UIActivityViewController *moreVC = [[UIActivityViewController alloc] initWithActivityItems:@[self.tweetTextView.text] applicationActivities:nil];
-        [self presentViewController:moreVC animated:YES completion:nil];
         
-    }];
+    } else {
+        
+        [self showAlertMessage:@"Please sign into Twitter before tweeting. Go to Settings > Twitter > User Name:"];
+        
+    }
 
+}
+- (IBAction)facebookBtn:(id)sender {
     
-    [actionController addAction:cancel];
-    [actionController addAction:tweetAction];
-    [actionController addAction:facebookAction];
-    [actionController addAction:moreAction];
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        
+        SLComposeViewController *facebookVC = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [facebookVC setInitialText:self.tweetTextView.text];
+        [self presentViewController:facebookVC animated:YES completion:nil];
+        
+    } else {
+        
+        [self showAlertMessage:@"Please sign in to Facebook."];
+    }
     
-    [self presentViewController:actionController animated:YES completion:nil];
+}
+
+- (IBAction)moreBtn:(id)sender {
     
+    UIActivityViewController *moreVC = [[UIActivityViewController alloc] initWithActivityItems:@[self.tweetTextView.text] applicationActivities:nil];
+    [self presentViewController:moreVC animated:YES completion:nil];
+
 }
 
 - (void)configureTweetTextView {
@@ -125,6 +124,30 @@
     self.tweetTextView.layer.borderColor = [UIColor colorWithWhite:0 alpha:0.5].CGColor;
     
     self.tweetTextView.layer.borderWidth = 2.0;
+    
+}
+
+- (void)configureFacebookTextView {
+    
+    self.facebookTextView.layer.backgroundColor = [UIColor greenColor].CGColor;
+    
+    self.facebookTextView.layer.cornerRadius = 10.0;
+    
+    self.facebookTextView.layer.borderColor = [UIColor blackColor].CGColor;
+    
+    self.facebookTextView.layer.borderWidth = 2.0;
+    
+}
+
+- (void)configureMoreTextView {
+    
+    self.moreTextView.layer.backgroundColor = [UIColor yellowColor].CGColor;
+    
+    self.moreTextView.layer.cornerRadius = 10.0;
+    
+    self.moreTextView.layer.borderColor = [UIColor colorWithWhite:0 alpha:0.5].CGColor;
+    
+    self.moreTextView.layer.borderWidth = 2.0;
     
 }
 
