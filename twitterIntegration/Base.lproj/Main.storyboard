@@ -26,27 +26,70 @@
                                             <action selector="showShareAction:" destination="BYZ-38-t0r" id="34V-4A-s5c"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem systemItem="action" id="Z6A-np-b9u">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="facebookBtn:" destination="BYZ-38-t0r" id="FY5-BV-GSZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="action" id="HoF-m6-cCr">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="moreBtn:" destination="BYZ-38-t0r" id="PdB-Ld-fHq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="action" id="EYS-cV-XqQ">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="alertButton:" destination="BYZ-38-t0r" id="IId-Xc-g2r"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U6l-Ft-tXF">
-                                <rect key="frame" x="-4" y="64" width="328" height="504"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <rect key="frame" x="16" y="64" width="288" height="118"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="118" id="FiM-iI-dyh"/>
+                                </constraints>
+                                <string key="text">TwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitterTwitter</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rq1-f2-Afu">
+                                <rect key="frame" x="16" y="207" width="288" height="118"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="118" id="WYu-Mn-ijt"/>
+                                </constraints>
+                                <string key="text">FacebookFacebookFacebookFacebookFacebookFacebookFacebookFacebookFacebookFacebookFacebookFacebookFacebookFacebookFacebookFacebook</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="MoreMoreMoreMoreMoreMoreMoreMoreMoreMoreMoreMoreMoreMoreMoreMoreMoreMoreMoreMoreMoreMoreMoreMoreMore" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QP3-IT-y5R">
+                                <rect key="frame" x="16" y="357" width="288" height="118"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="U6l-Ft-tXF" firstAttribute="top" secondItem="3rk-kd-4Sv" secondAttribute="bottom" id="88N-3t-56k"/>
                             <constraint firstItem="3rk-kd-4Sv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="AuL-mj-TBe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3rk-kd-4Sv" secondAttribute="trailing" constant="-20" id="D2x-Lq-GCj"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="U6l-Ft-tXF" secondAttribute="bottom" id="T4Q-7c-Llq"/>
-                            <constraint firstItem="U6l-Ft-tXF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="fsp-3m-vpu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="U6l-Ft-tXF" secondAttribute="trailing" constant="-20" id="lxE-4J-U52"/>
+                            <constraint firstItem="QP3-IT-y5R" firstAttribute="trailing" secondItem="rq1-f2-Afu" secondAttribute="trailing" id="Gq6-2C-slN"/>
+                            <constraint firstItem="rq1-f2-Afu" firstAttribute="leading" secondItem="U6l-Ft-tXF" secondAttribute="leading" id="MhU-Ja-H7L"/>
+                            <constraint firstItem="QP3-IT-y5R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="MjR-mX-aOR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QP3-IT-y5R" secondAttribute="bottom" constant="93" id="ZHq-sy-ywt"/>
+                            <constraint firstItem="rq1-f2-Afu" firstAttribute="trailing" secondItem="U6l-Ft-tXF" secondAttribute="trailing" id="dHT-K0-iCa"/>
+                            <constraint firstItem="QP3-IT-y5R" firstAttribute="top" secondItem="rq1-f2-Afu" secondAttribute="bottom" constant="32" id="rxL-3a-16f"/>
+                            <constraint firstItem="U6l-Ft-tXF" firstAttribute="centerX" secondItem="3rk-kd-4Sv" secondAttribute="centerX" id="urs-RL-meY"/>
                             <constraint firstItem="3rk-kd-4Sv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="vdh-y2-VOQ"/>
+                            <constraint firstItem="rq1-f2-Afu" firstAttribute="leading" secondItem="QP3-IT-y5R" secondAttribute="leading" id="xA0-hG-bVi"/>
+                            <constraint firstItem="rq1-f2-Afu" firstAttribute="top" secondItem="U6l-Ft-tXF" secondAttribute="bottom" constant="25" id="xqh-0C-k3w"/>
+                            <constraint firstItem="U6l-Ft-tXF" firstAttribute="top" secondItem="3rk-kd-4Sv" secondAttribute="bottom" id="zRI-9c-8sj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="facebookTextView" destination="rq1-f2-Afu" id="2bJ-Mu-F2H"/>
+                        <outlet property="moreTextView" destination="QP3-IT-y5R" id="geT-cf-quA"/>
                         <outlet property="tweetTextView" destination="U6l-Ft-tXF" id="7fT-9u-AaG"/>
                     </connections>
                 </viewController>
