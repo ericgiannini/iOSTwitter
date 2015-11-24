@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		992F9B1D1C046B350001C68A /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 992F9B1C1C046B350001C68A /* iAd.framework */; };
 		995054331BF960FB00C47A5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 995054321BF960FB00C47A5E /* main.m */; };
 		995054361BF960FB00C47A5E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 995054351BF960FB00C47A5E /* AppDelegate.m */; };
 		995054391BF960FB00C47A5E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 995054381BF960FB00C47A5E /* ViewController.m */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		992F9B1C1C046B350001C68A /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		9950542E1BF960FB00C47A5E /* twitterIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twitterIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		995054321BF960FB00C47A5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		995054341BF960FB00C47A5E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				992F9B1D1C046B350001C68A /* iAd.framework in Frameworks */,
 				995054491BF98BC300C47A5E /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +48,7 @@
 		995054251BF960FB00C47A5E = {
 			isa = PBXGroup;
 			children = (
+				992F9B1C1C046B350001C68A /* iAd.framework */,
 				995054481BF98BC300C47A5E /* Social.framework */,
 				995054301BF960FB00C47A5E /* twitterIntegration */,
 				9950542F1BF960FB00C47A5E /* Products */,
