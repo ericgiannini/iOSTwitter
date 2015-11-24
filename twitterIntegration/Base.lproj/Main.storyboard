@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -69,6 +69,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="gup-4x-GEW">
+                                <rect key="frame" x="0.0" y="510" width="320" height="50"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Fhr-qQ-ltQ"/>
+                                </connections>
+                            </adBannerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -77,7 +83,9 @@
                             <constraint firstItem="QP3-IT-y5R" firstAttribute="trailing" secondItem="rq1-f2-Afu" secondAttribute="trailing" id="Gq6-2C-slN"/>
                             <constraint firstItem="rq1-f2-Afu" firstAttribute="leading" secondItem="U6l-Ft-tXF" secondAttribute="leading" id="MhU-Ja-H7L"/>
                             <constraint firstItem="QP3-IT-y5R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="MjR-mX-aOR"/>
+                            <constraint firstItem="gup-4x-GEW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="W3K-au-zEC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="QP3-IT-y5R" secondAttribute="bottom" constant="93" id="ZHq-sy-ywt"/>
+                            <constraint firstItem="gup-4x-GEW" firstAttribute="top" secondItem="QP3-IT-y5R" secondAttribute="bottom" constant="35" id="Zy6-a8-Pr6"/>
                             <constraint firstItem="rq1-f2-Afu" firstAttribute="trailing" secondItem="U6l-Ft-tXF" secondAttribute="trailing" id="dHT-K0-iCa"/>
                             <constraint firstItem="QP3-IT-y5R" firstAttribute="top" secondItem="rq1-f2-Afu" secondAttribute="bottom" constant="32" id="rxL-3a-16f"/>
                             <constraint firstItem="U6l-Ft-tXF" firstAttribute="centerX" secondItem="3rk-kd-4Sv" secondAttribute="centerX" id="urs-RL-meY"/>
