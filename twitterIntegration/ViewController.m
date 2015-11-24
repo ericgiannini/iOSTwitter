@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Social/Social.h"
 
+
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *tweetTextView;
@@ -148,6 +149,25 @@
     self.moreTextView.layer.borderColor = [UIColor colorWithWhite:0 alpha:0.5].CGColor;
     
     self.moreTextView.layer.borderWidth = 2.0;
+    
+}
+
+#pragma mark - iAd Delegate method 
+
+-(void)bannerViewDidLoadAd:(ADBannerView *)banner {
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:1];
+    [banner setAlpha:1];
+    [UIView commitAnimations];
+}
+
+-(void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:1];
+    [banner setAlpha:0];
+    [UIView commitAnimations];
     
 }
 
